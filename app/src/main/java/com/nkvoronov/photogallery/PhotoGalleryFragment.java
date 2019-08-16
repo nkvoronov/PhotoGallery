@@ -35,6 +35,7 @@ public class PhotoGalleryFragment extends Fragment {
         mPhotoRecyclerView = view.findViewById(R.id.photo_recycler_view);
         mPhotoRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
         mEmptyTextView = view.findViewById(R.id.empty_label);
+        mEmptyTextView.setVisibility(View.GONE);
         setupAdapter();
         return view;
     }
@@ -52,7 +53,7 @@ public class PhotoGalleryFragment extends Fragment {
             mTitleTextView = (TextView) itemView;
         }
         public void bindGalleryItem(GalleryItem item) {
-            mTitleTextView.setText(item.toString());
+            mTitleTextView.setText(item.getCaption());
         }
     }
 
